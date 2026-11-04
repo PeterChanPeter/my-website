@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Webpage</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            margin-top: 50px; 
+            background-color: #f4f4f9; 
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        h1 { 
+            color: #333; 
+            display: inline-block;
+            animation: bounce 1.5s infinite alternate;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-15px); }
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hello, World!</h1>
+    <p>This is my very first webpage created locally.</p>
+
+    <!-- Animated Cat Image -->
+    <div style="margin: 20px;">
+        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Funny Cat Animation" style="width: 220px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+    </div>
+
+    <!-- Theme Toggle Button -->
+    <div style="margin: 20px;">
+        <button onclick="toggleTheme()" style="padding: 10px 20px; cursor: pointer; border-radius: 8px;">
+            Toggle Dark Mode 🌙
+        </button>
+    </div>
+
+    <!-- Click Counter Interactive Card -->
+    <div class="card">
+        <h3>Interactive Card</h3>
+        <button id="funBtn" onclick="countClicks()" style="padding: 10px 18px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Click me! 🚀
+        </button>
+        <p id="counterText" style="margin-top: 10px; color: #666;">You have clicked 0 times.</p>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        function toggleTheme() {
+            document.body.style.backgroundColor = 
+                document.body.style.backgroundColor === 'black' ? '#f4f4f9' : 'black';
+            document.body.style.color = 
+                document.body.style.color === 'white' ? '#333' : 'white';
+        }
+
+        let count = 0;
+        function countClicks() {
+            count++;
+            document.getElementById('counterText').innerText = `You have clicked ${count} times!`;
+            if (count === 10) {
+                alert("🎉 You unlocked a secret bonus level!");
+            }
+        }
+    </script>
+
+</body>
+</html>
